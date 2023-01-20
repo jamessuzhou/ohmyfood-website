@@ -1,0 +1,11 @@
+{
+  "name": "ohmyfood-website",
+  "version": "1.0.0",
+  "description": "ohmyfood website AMS Openclassrooms work",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css --style compressed"
+  },
+  "author": "",
+  "license": "ISC"
+}

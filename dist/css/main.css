@@ -1,0 +1,142 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  background: #FF79DA;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #9356DC;
+  font-size: 2rem;
+  font-weight: 100;
+  line-height: 1.7;
+}
+
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-size: 5rem;
+  font-style: italic;
+}
+
+textarea {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-size: 2rem;
+}
+
+button {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 2.75rem;
+}
+
+.container {
+  border: 0.1rem solid #D6FFF5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 80%;
+}
+@media all and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+.form {
+  width: 100%;
+}
+.form__heading {
+  width: 100%;
+  color: #fff;
+  text-shadow: 0.55rem 0.55rem #782cd3;
+  background: #9356DC;
+  line-height: 5rem;
+}
+.form__field label {
+  color: #D6FFF5;
+  display: block;
+}
+.form__field input {
+  width: 100%;
+  background: #FF79DA;
+  border: 0.1rem solid #9356DC;
+  color: #D6FFF5;
+}
+.form__field textarea {
+  width: 100%;
+  color: #9356DC;
+  background: #FF79DA;
+  border: 0.1rem solid #9356DC;
+  outline: none;
+}
+.form__field textarea:active, .form__field textarea:focus {
+  color: #D6FFF5;
+}
+
+.card1, .card2 {
+  width: 60%;
+  background-color: white;
+  border-radius: 30px;
+  border: 5px solid white;
+  overflow: hidden;
+  margin: 0 0 20px 0;
+  box-shadow: 5px 5px 15px lightgrey;
+}
+.card1 a, .card2 a {
+  text-decoration: none;
+  color: black;
+}
+.card1 a:hover, .card2 a:hover {
+  color: #99E2D0;
+}
+.card1__img {
+  height: 180px;
+  border-radius: 15px 15px 0 0;
+}
+.card1__text {
+  margin: 0 10px;
+}
+
+.card2 a:hover {
+  color: #FF79DA;
+}
+
+@media screen and (min-width: 992px) {
+  .logo {
+    background-color: blue;
+  }
+}
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #9356DC;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hello {
+  background-color: #9356DC;
+  color: #FF79DA;
+}/*# sourceMappingURL=main.css.map */

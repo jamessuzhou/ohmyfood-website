@@ -1,0 +1,41 @@
+.card1 {
+    width: 60%;
+    background-color: white;
+    border-radius: 30px;
+    border: 5px solid white;
+    overflow: hidden;
+    margin: 0 0 20px 0;
+    box-shadow: 5px 5px 15px lightgrey;
+
+    a {
+        text-decoration: none;
+        color: black;
+
+        &:hover {
+            color: $colour-tertiary;
+        }
+    }
+
+
+    &__img {
+        height: 180px;
+        border-radius: 15px 15px 0 0;
+    }
+
+    &__text {
+        margin: 0 10px;
+    }
+
+
+}
+
+.card2 {
+    @extend .card1;
+
+    a {
+
+        &:hover {
+            color: $colour-secondary;
+        }
+    }
+}

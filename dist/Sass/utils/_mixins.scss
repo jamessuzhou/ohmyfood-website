@@ -1,0 +1,20 @@
+@mixin border($colour: $colour-primary) {
+    border: .1rem solid $colour;
+}
+
+@mixin heading-shadow($colour: lightness-shift($colour-primary), $offset: $heading-shadow-size) {
+    text-shadow: $offset $offset $colour;
+}
+
+@mixin mobile {
+    @media all and (max-width: $mobile) {
+        @content;
+    }
+}
+
+@mixin flexCenter($direction) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: $direction;
+}
