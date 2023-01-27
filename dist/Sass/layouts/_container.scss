@@ -1,11 +1,68 @@
 .container {
-    @include border($colour-accent);
-    @include flexCenter(row);
+    @include flexCenter(column);
+    @include fontType;
+    padding: 30px 0;
+    width: $wholeWidth;
 
-    @include mobile {
-        flex-direction: column;
+
+    &--2 {
+        @extend .container;
+        background-color: $colour-background;
+
+        & .subheading {
+            justify-content: center;
+
+        }
+
+        & .info {
+            padding: 20px;
+            text-align: center;
+            font-weight: 100;
+        }
     }
 
-    width: 80%;
+    &--3 {
+        @include flexCenter(row);
+        width: $wholeWidth;
+        background-color: #EAEAEA;
+        height: 50px;
+        box-shadow: inset 0px 2px 5px 0px lightgray;
 
+        & input {
+            background: transparent;
+            border: 0;
+            outline: none;
+            padding: 20px;
+            font-size: large;
+            text-align: center;
+
+            &:focus::placeholder {
+                color: transparent;
+            }
+        }
+
+        & ::placeholder {
+            color: black;
+
+
+        }
+
+    }
+
+    &--4 {
+        @extend .container;
+        background-color: $colour-background;
+        border-radius: 40px 40px 0 0;
+        margin-top: -40px;
+        margin-bottom: 0;
+
+        
+    }
+
+}
+
+.subheading {
+    @include subheadingStyle;
+    @include flexLeft(row);
+    width: $bigWidth;
 }

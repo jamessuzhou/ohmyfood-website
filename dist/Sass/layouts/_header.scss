@@ -1,0 +1,25 @@
+header {
+    @include flexCenter(row);
+    position: relative;
+    margin: 20px;
+    width: $bigWidth;
+
+    & .container--logo {
+        height: 40px;
+    }
+
+    & .back-arrow {
+        position: absolute;
+        left: 0;
+        font-size: larger;
+
+        & a {
+            text-decoration: none;
+            color: $charcoal;
+
+            & :hover {
+                color: $colour-secondary;
+            }
+        }
+    }
+}

@@ -1,40 +1,21 @@
+@import "./base/base";
+@import "./base/typography";
+
 @import "./utils/variables";
 @import "./utils/functions";
 @import "./utils/mixins";
 @import "./utils/extensions";
 
-@import "./base/base";
-@import "./base/typography";
-
 @import "./components/buttons";
 
+@import "./layouts/card";
 @import "./layouts/header";
 @import "./layouts/nav";
 @import "./layouts/container";
 @import "./layouts/form";
-@import "./layouts/card";
+@import "./layouts/footer";
+
 
 @import "./pages/work";
 @import "./pages/about";
 @import "./pages/project";
-
-@import "config";
-@import "home";
-@import "responsive";
-
-
-body {
-    margin: 0;
-    @include flexCenter(column);
-    background-color: $colour-primary;
-}
-
-.logo {
-    @include center;
-}
-
-.hello {
-
-    background-color: $colour-primary;
-    color: $colour-secondary;
-}

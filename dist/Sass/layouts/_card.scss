@@ -1,41 +1,213 @@
-.card1 {
-    width: 60%;
+@mixin transitionsPointSix {
+    transition: all .6s ease-in-out;
+
+}
+
+.explainer {
+    @include flexCenter(row);
+    box-shadow: $shadow-box;
+    justify-content: flex-start;
+    padding-left: 40px;
+    position: relative;
+    border-radius: 20px;
+    align-items: left;
+    background-color: $colour-background;
+    width: 80%;
+    height: 70px;
+    margin: 10px;
+    font-weight: 600;
+
+    &--number {
+        @include flexCenter(row);
+        position: absolute;
+        left: -8px;
+        height: 30px;
+        width: 30px;
+        border-radius: 100px;
+        background-color: $colour-primary;
+        color: $colour-white;
+    }
+
+    &--icon {
+        color: gray;
+    }
+
+    &--text {
+        padding-left: 30px;
+    }
+}
+
+
+
+.card {
+    box-shadow: $shadow-box;
+    width: $bigWidth;
     background-color: white;
-    border-radius: 30px;
-    border: 5px solid white;
+    border-radius: 20px;
     overflow: hidden;
     margin: 0 0 20px 0;
-    box-shadow: 5px 5px 15px lightgrey;
+
 
     a {
         text-decoration: none;
         color: black;
+    }
 
-        &:hover {
-            color: $colour-tertiary;
+
+
+
+    &__top {
+        position: relative;
+
+        &__img {
+            height: 180px;
+            border-radius: 15px 15px 0 0;
+        }
+
+        &__new-tag {
+            position: absolute;
+            @include flexCenter(row);
+            background-color: $new-tag-background-color;
+            color: $new-tag-text-color;
+            font-weight: 600;
+            top: 20px;
+            right: 20px;
+            height: 40px;
+            width: 110px;
+            border-radius: 4px;
         }
     }
 
 
-    &__img {
-        height: 180px;
-        border-radius: 15px 15px 0 0;
+    &__bottom {
+        @include flexCenter(row);
+        justify-content: space-between;
     }
 
     &__text {
         margin: 0 10px;
-    }
-
-
-}
-
-.card2 {
-    @extend .card1;
-
-    a {
+        padding: 15px;
+        width: 70%;
 
         &:hover {
-            color: $colour-secondary;
+            color: $colour-primary
         }
     }
+
+    &__heart {
+        position: relative;
+        width: 30%;
+        top: -10px;
+
+        &--empty {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+        }
+
+        &--full {
+            color: $colour-primary;
+            opacity: 0;
+            @include transitionsPointSix;
+            position: absolute;
+            top: -10px;
+            right: 20px;
+
+        }
+
+        &:hover &--full {
+            opacity: 1;
+        }
+    }
+}
+
+.restaurant-heading {
+    display: flex;
+    justify-content: space-between;
+    width: $bigWidth;
+    position: relative;
+    margin: 10px;
+
+    &__title {
+        @include flexLeft(row);
+        font-family: "Shrikhand Regular", sans-serif;
+        font-size: 40px;
+
+    }
+
+    & .card__heart {
+        position: relative;
+        top: 0;
+
+        &--empty {
+            top: 10px;
+        }
+
+        &--full {
+            top: 10px;
+        }
+
+    }
+}
+
+.menu {
+    @include flexCenter(column);
+    font-family: "Roboto Regular", sans-serif;
+    width: 100%;
+
+    &__section {
+        @include flexCenter(column);
+        width: 100%;
+        margin: 20px 0;
+
+
+        &__subheading {
+            width: $bigWidth;
+            justify-items: flex-start;
+            text-transform: uppercase;
+
+            &__border {
+                border-bottom: 3px solid $colour-tertiary;
+                width: 7%;
+            }
+        }
+
+
+
+        &__items {
+            width: $bigWidth;
+            background-color: $colour-white;
+            margin: 15px 0;
+            border-radius: 25px;
+            box-shadow: $shadow-box;
+
+            &__checkmark {}
+
+            &__top {
+                padding: 20px 20px;
+
+                &__name {
+                    font-size: x-large;
+                    font-weight: bold
+                }
+            }
+
+            &__bottom {
+                @include flexCenter(row);
+                justify-content: space-between;
+                padding: 0 20px 20px 20px;
+
+                &__description {}
+
+                &__price {
+                    font-weight: bolder;
+                }
+
+            }
+
+
+        }
+    }
+
+
 }

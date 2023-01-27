@@ -1,6 +1,10 @@
-button {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 900;
-    font-style: italic;
-    font-size: 2.75rem;
+.button1 {
+    @include gradientButton;
+    @include fontType;
+    box-shadow: $shadow-box;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    color: $colour-white;
+    width: 50%;
 }
