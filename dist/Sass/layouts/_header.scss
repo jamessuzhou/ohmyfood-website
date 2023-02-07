@@ -1,8 +1,10 @@
 header {
     @include flexCenter(row);
     position: relative;
-    margin: 20px;
-    width: $bigWidth;
+    margin: 5px;
+    width: map-get($widths, "90Percent");
+    height: 80px;
+
 
     & .container--logo {
         height: 40px;

@@ -1,5 +1,6 @@
 $colour-primary: #9356DC;
 $colour-secondary: #FF79DA;
+$colour-secondary-opaque: rgb(255, 121, 218, 0.4);
 $colour-tertiary: #99E2D0;
 $colour-accent: #D6FFF5;
 $colour-white: #fff;
@@ -14,11 +15,27 @@ $layout-margin: 6rem;
 $grid-gutter: $layout-margin * .25;
 
 $txt-size: 20px;
+$somePadding: 20px;
 
-$mobile: 768px;
+$breakpoints: (
+    "mobile": 0px,
+    "tablet": 768px,
+    "desktop": 992px,
+);
 
 $shadow-box: 5px 5px 15px lightgrey;
-$wholeWidth: 100%;
-$bigWidth: 90%;
+$shadow-box-dark: 5px 5px 15px gray;
+
+$widths: (
+    "100Percent": 100%,
+    "90Percent": 90%,
+    "80Percent": 80%,
+    "70Percent": 70%,
+    "60Percent": 60%,
+    "50Percent": 50%,
+
+);
+
+
 $borderradius: 20px;
 $spacedLetters: 0.3px;

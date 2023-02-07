@@ -7,4 +7,13 @@
     border-radius: 50px;
     color: $colour-white;
     width: 50%;
+    cursor: pointer;
+    transition: filter 300ms 100ms, box-shadow 300ms;
+
+
+    &:hover {
+        box-shadow: $shadow-box-dark;
+        filter: brightness(110%);
+    }
 }
+

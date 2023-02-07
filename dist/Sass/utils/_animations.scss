@@ -1,0 +1,83 @@
+
+.fade-in {
+    animation: 1s ease 0s fade-in forwards;
+    opacity: 0;
+}
+
+// Loop from 1-9.
+@for $i from 1 through 99 {
+    .fade-in {
+
+        // :nth-child(1-99) 
+        &:nth-child(#{$i}) {
+
+            // Delay the animation. Delay increases as items loop.
+            animation-delay: $i * (200ms);
+        }
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 100%;
+
+    }
+}
+
+
+
+.loader {
+    z-index: 9999;
+    background: $colour-background;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: map-get($widths, "100Percent");
+    height: 100%;
+    @include flexCenter(row);
+    animation: disappear 1000ms ease 1000ms;
+    animation-fill-mode: forwards;
+    transition: opacity 1000ms, visibility 1000ms;
+
+    &--spinner {
+        z-index: 999999;
+        border: 15px solid $colour-primary;
+        border-top-color: $colour-secondary;
+        opacity: 0.75;
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+        animation: loading 750ms ease infinite;
+    }
+
+    @keyframes loading {
+        from {
+            transform: rotate(0turn);
+        }
+
+        to {
+            transform: rotate(1turn);
+        }
+    }
+
+
+
+    @keyframes disappear {
+        to {
+            visibility: hidden;
+            opacity: 0;
+        }
+    }
+
+
+}
+
+
+
+

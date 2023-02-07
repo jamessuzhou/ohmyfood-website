@@ -1,0 +1,365 @@
+.reponsive-test {
+    border: 2px solid red;
+
+    @include mobile {
+        background-color: red;
+        @include flexCenter(row);
+
+    }
+
+    @include tablet {
+        background-color: green;
+        @include flexCenter(column);
+
+    }
+
+    @include desktop {
+        background-color: aqua;
+        @include flexCenter(row);
+
+    }
+}
+
+#hideMeAfter5Seconds {
+    background-color: red;
+    animation: disappear 0s ease-out 2s;
+    animation-fill-mode: forwards;
+    transition: opacity 1000ms, visibility 1000ms;
+}
+
+@keyframes disappear {
+    to {
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
+.card-container {
+    padding: $somePadding;
+    border: 2px solid red;
+    width: 80%;
+    justify-content: space-around;
+
+    &__card {
+        background-color: indigo;
+        width: 80%;
+        height: 50px;
+        margin: 20px;
+        animation: 1s ease 0s fade-in forwards;
+        opacity: 0;
+    }
+
+
+}
+
+.fade-in {
+    animation: 1s ease 0s fade-in forwards;
+    opacity: 0;
+}
+
+// Loop from 1-9.
+@for $i from 1 through 99 {
+    .fade-in {
+
+        // :nth-child(1-99) 
+        &:nth-child(#{$i}) {
+
+            // Delay the animation. Delay increases as items loop.
+            animation-delay: $i * (200ms);
+        }
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 100%;
+
+    }
+}
+
+
+.spin {
+    @include flexCenter(row);
+    border: 2px solid red;
+    padding: $somePadding;
+    margin: 10px;
+    width: 80%;
+    overflow: hidden;
+
+    &--left {
+        padding: $somePadding;
+        border: 2px solid blue;
+        width: 100%;
+        transition: ease-in-out 300ms;
+
+        p {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+
+    &--middle {
+        border: 2px solid greenyellow;
+        width: 10%;
+    }
+
+
+    &--right {
+        border: 2px solid green;
+        width: 0%;
+        transform: translateX(150px);
+        transition: ease-in-out 400ms;
+
+        p {
+            transform: rotate(-180deg);
+            transition: ease-in-out 300ms;
+
+        }
+    }
+
+    &:hover &--right {
+        transform: translateX(0);
+        width: 10%;
+
+        p {
+            transform: rotate(0deg);
+            transition: ease-in-out 300ms 100ms;
+
+        }
+    }
+}
+
+.loader {
+    z-index: 9999;
+    background: $colour-background;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: map-get($widths, "100Percent");
+    height: 100%;
+    @include flexCenter(row);
+    animation: disappear 1000ms ease 1000ms;
+    animation-fill-mode: forwards;
+    transition: opacity 1000ms, visibility 1000ms;
+
+    &--spinner {
+        z-index: 999999;
+        border: 15px solid $colour-primary;
+        border-top-color: $colour-secondary;
+        opacity: 0.75;
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+        animation: loading 750ms ease infinite;
+    }
+
+    @keyframes loading {
+        from {
+            transform: rotate(0turn);
+        }
+
+        to {
+            transform: rotate(1turn);
+        }
+    }
+
+
+
+    @keyframes disappear {
+        to {
+            visibility: hidden;
+            opacity: 0;
+        }
+    }
+
+
+}
+
+
+
+
+
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.btn {
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: red;
+    color: cyan;
+    font-size: 3rem;
+    cursor: pointer;
+    padding: 1.85rem 3rem;
+    border-radius: 10rem;
+    transform: scale(1);
+    transition: background-color 300ms 150ms, transform 450ms;
+
+    &:active {
+        transform: scale(1.15);
+        background-color: green;
+    }
+}
+
+.btn2 {
+    background: red;
+    font-size: 3rem;
+    cursor: pointer;
+    padding: 1.85rem 3rem;
+    border-radius: 10rem;
+
+    &:active+.ball {
+        transform: scale(1.15);
+    }
+}
+
+.ball {
+    width: 100px;
+    height: 100px;
+    background: blue;
+    margin-bottom: 1rem;
+    border-radius: 100px * 0.5;
+    transform: scale(0.1);
+    transition: transform 400ms;
+
+}
+
+
+
+
+.hello-box {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 30px;
+    border: 2px solid black;
+
+
+    &:hover {
+        justify-content: flex-end;
+        transition: 10s;
+    }
+
+    &-circle {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        color: blue;
+        background-color: blue;
+
+        &:hover {
+            width: 50px;
+            transition: width 3s;
+            transition-timing-function: ease-in-out;
+        }
+    }
+}
+
+.new-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    font-size: xx-large;
+    font-weight: 800s;
+    height: 50px;
+    padding: $somePadding;
+    background-color: cyan;
+
+    & .left {
+        color: red;
+        cursor: pointer;
+    }
+
+    & .right {
+        width: 25px;
+        height: 25px;
+        transition: transform 1s ease-in-out;
+        transform: translateX(50px);
+        background-color: white;
+        color: aliceblue;
+    }
+
+    &:hover .right {
+        transform: translateX(-50px);
+        width: 100px;
+
+    }
+}
+
+.new-card {
+    @include flexLeft(row);
+    border: 2px solid red;
+    background-color: white;
+    width: 80%;
+
+
+    .left {
+        z-index: 1;
+        background-color: white;
+        position: relative;
+        width: 90%;
+
+
+        &--text {
+            height: 20px;
+
+            p {
+                position: absolute;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                width: 80%;
+            }
+        }
+    }
+
+
+    .middle {
+        background: white;
+        z-index: 3;
+        width: 10%;
+        height: 100%;
+
+        & p {
+            margin-top: 30px;
+        }
+    }
+
+
+    .right {
+        z-index: 4;
+        background-color: blue;
+        width: 0%;
+        transform: translateX(100%);
+        transition: background-color 300ms 150ms, width 450ms, ease-in-out 300ms;
+    }
+
+    &:hover .right {
+        width: 15%;
+        justify-content: center;
+        background-color: green;
+        transform: translateX(0);
+        transition: ease-in 500ms;
+
+
+    }
+
+
+}

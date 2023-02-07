@@ -5,6 +5,21 @@
 
 .explainer {
     @include flexCenter(row);
+    @include mobile {
+        width: map-get($widths, "80Percent");
+
+    };
+
+    @include tablet {
+        width: map-get($widths, "70Percent");
+
+    };
+
+    @include desktop {
+        width: map-get($widths, "60Percent");
+
+    };
+
     box-shadow: $shadow-box;
     justify-content: flex-start;
     padding-left: 40px;
@@ -12,8 +27,8 @@
     border-radius: 20px;
     align-items: left;
     background-color: $colour-background;
-    width: 80%;
-    height: 70px;
+    
+        height: 70px;
     margin: 10px;
     font-weight: 600;
 
@@ -41,7 +56,22 @@
 
 .card {
     box-shadow: $shadow-box;
-    width: $bigWidth;
+
+    @include mobile {
+        width: map-get($widths, "90Percent");
+
+    }
+
+    @include tablet {
+        width: map-get($widths, "80Percent");
+
+    }
+
+    @include desktop {
+        width: map-get($widths, "60Percent");
+
+    }
+
     background-color: white;
     border-radius: 20px;
     overflow: hidden;
@@ -122,9 +152,24 @@
 }
 
 .restaurant-heading {
+    @include mobile {
+        width: map-get($widths, "90Percent");
+
+    }
+
+    @include tablet {
+        width: map-get($widths, "80Percent");
+
+    }
+
+    @include desktop {
+        width: map-get($widths, "60Percent");
+
+    }
+
     display: flex;
     justify-content: space-between;
-    width: $bigWidth;
+
     position: relative;
     margin: 10px;
 
@@ -161,10 +206,27 @@
         margin: 20px 0;
 
 
+
         &__subheading {
-            width: $bigWidth;
+            @include mobile {
+                width: map-get($widths, "90Percent");
+
+            }
+
+            @include tablet {
+                width: map-get($widths, "80Percent");
+
+            }
+
+            @include desktop {
+                width: map-get($widths, "60Percent");
+
+            }
+            
+
             justify-items: flex-start;
             text-transform: uppercase;
+            margin-bottom: 15px;
 
             &__border {
                 border-bottom: 3px solid $colour-tertiary;
@@ -172,42 +234,105 @@
             }
         }
 
+        &__item {
 
 
-        &__items {
-            width: $bigWidth;
+            @include mobile {
+                width: map-get($widths, "90Percent");
+
+            }
+
+            @include tablet {
+                width: map-get($widths, "80Percent");
+
+            }
+
+            @include desktop {
+                width: map-get($widths, "60Percent");
+
+            }
+
+            @include flexLeft(row);
+            height: 120px;
             background-color: $colour-white;
-            margin: 15px 0;
             border-radius: 25px;
             box-shadow: $shadow-box;
+            overflow: hidden;
+            margin-bottom: 20px;
 
-            &__checkmark {}
 
-            &__top {
-                padding: 20px 20px;
+            &__text {
+                padding: 0 20px;
+                width: 90%;
+                transition: ease-in-out 300ms;
 
                 &__name {
                     font-size: x-large;
-                    font-weight: bold
+                    font-weight: bold;
+                }
+
+                &__description {
+                    position: relative;
+
+                    p {
+                        margin-bottom: 5px;
+                        width: 100%;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
                 }
             }
 
-            &__bottom {
+            &:hover &__text {
+                width: 80%;
+            }
+
+            &__price {
                 @include flexCenter(row);
-                justify-content: space-between;
-                padding: 0 20px 20px 20px;
+                height: 100%;
+                width: 15%;
+                margin-top: 25px;
+                font-weight: bold;
+                margin-left: -25px;
+            }
 
-                &__description {}
 
-                &__price {
-                    font-weight: bolder;
+
+            &__checkmark {
+                @include flexCenter(row);
+                color: $colour-white;
+                font-size: x-large;
+                background-color: $colour-tertiary;
+                width: 0%;
+                height: 100%;
+                transform: translateX(100px);
+                transition: ease-in-out 300ms;
+
+                i {
+                    transform: rotate(-180deg);
+                    transition: ease-in 300ms 100ms;
+
                 }
+
 
             }
 
+            &:hover &__checkmark {
+                transform: translateX(0);
+                width: 15%;
+
+            }
+
+            &:hover i {
+                transform: rotate(0deg);
+
+            }
 
         }
+
+
+
+
     }
-
-
 }

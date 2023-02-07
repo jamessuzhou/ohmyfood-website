@@ -1,13 +1,12 @@
 .container {
     @include flexCenter(column);
     @include fontType;
-    padding: 30px 0;
-    width: $wholeWidth;
-
+    width: map-get($widths, "100Percent");
 
     &--2 {
         @extend .container;
         background-color: $colour-background;
+        padding: 30px 0;
 
         & .subheading {
             justify-content: center;
@@ -15,7 +14,7 @@
         }
 
         & .info {
-            padding: 20px;
+            padding: $somePadding;
             text-align: center;
             font-weight: 100;
         }
@@ -23,7 +22,7 @@
 
     &--3 {
         @include flexCenter(row);
-        width: $wholeWidth;
+        width: map-get($widths, "100Percent");
         background-color: #EAEAEA;
         height: 50px;
         box-shadow: inset 0px 2px 5px 0px lightgray;
@@ -32,7 +31,7 @@
             background: transparent;
             border: 0;
             outline: none;
-            padding: 20px;
+            padding: $somePadding;
             font-size: large;
             text-align: center;
 
@@ -56,13 +55,18 @@
         margin-top: -40px;
         margin-bottom: 0;
 
-        
+
     }
 
-}
+    &--5 {
+        @extend .container;
+        padding: 30px 0;
+    }
 
-.subheading {
-    @include subheadingStyle;
-    @include flexLeft(row);
-    width: $bigWidth;
+    &--6 {
+        @extend .container;
+        background-color: $colour-background;
+        padding-bottom: 80px;
+    }
+
 }

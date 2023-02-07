@@ -1,10 +1,14 @@
 @import "./base/base";
 @import "./base/typography";
 
+
 @import "./utils/variables";
 @import "./utils/functions";
 @import "./utils/mixins";
 @import "./utils/extensions";
+@import "./utils/animations";
+
+@import "./animations_practice.scss";
 
 @import "./components/buttons";
 
@@ -12,8 +16,10 @@
 @import "./layouts/header";
 @import "./layouts/nav";
 @import "./layouts/container";
-@import "./layouts/form";
+@import "./layouts/headings";
 @import "./layouts/footer";
+@import "./layouts/images";
+
 
 
 @import "./pages/work";

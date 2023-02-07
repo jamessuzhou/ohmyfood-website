@@ -3,10 +3,25 @@
 }
 
 @mixin mobile {
-    @media all and (max-width: $mobile) {
+    @media all and (min-width: map-get($breakpoints, "mobile")) {
         @content;
     }
 }
+
+@mixin tablet {
+    @media all and (min-width: map-get($breakpoints, "tablet")) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media all and (min-width: map-get($breakpoints, "desktop")) {
+        @content;
+    }
+}
+
+
+
 
 @mixin flexCenter($direction) {
     display: flex;
@@ -35,5 +50,5 @@
 @mixin subheadingStyle {
     font-size: x-large;
     font-weight: 600;
-    padding: 20px;
+    padding: $somePadding;
 }

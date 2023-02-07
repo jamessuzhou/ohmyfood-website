@@ -1,0 +1,25 @@
+.subheading {
+    @include subheadingStyle;
+    @include flexLeft(row);
+
+    @include mobile {
+        width: map-get($widths, "90Percent");
+
+    }
+
+    ;
+
+    @include tablet {
+        justify-content: center;
+    }
+
+    ;
+
+    @include desktop {
+        justify-content: center;
+
+    }
+
+    ;
+
+}

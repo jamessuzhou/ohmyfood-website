@@ -1,0 +1,22 @@
+.restaurant-img {
+    @include mobile {
+        width: map-get($widths, "100percent");
+    }
+
+    ;
+
+    @include tablet {
+        width: map-get($widths, "100Percent");
+        height: 400px;
+
+    }
+
+    ;
+
+    @include desktop {
+        width: map-get($widths, "100Percent");
+        height: 500px;
+    }
+
+    ;
+}

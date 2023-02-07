@@ -1,8 +1,12 @@
 footer {
-    @include flexLeft(column);
-    width: $wholeWidth;
-    padding: 20px;
+    @include flexCenter(row);
+    width: map-get($widths, "100Percent");
     background-color: $charcoal;
+}
+
+.footer__container {
+    width: map-get($widths, "90Percent");
+    @include flexLeft(column);
     color: $colour-white;
     font-family: "Roboto Regular", sans-serif;
     letter-spacing: $spacedLetters;
@@ -11,9 +15,18 @@ footer {
         width: 22px;
     }
 
-}
+    & p {
 
-.footer-title {
-    font-family: Shrikhand Regular, sans-serif;
-    font-size: x-large;
+        & a {
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+
+    .footer-title {
+        margin-top: 20px;
+        font-family: Shrikhand Regular, sans-serif;
+        font-size: x-large;
+    }
+
 }
