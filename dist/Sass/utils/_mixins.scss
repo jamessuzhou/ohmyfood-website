@@ -22,7 +22,6 @@
 
 
 
-
 @mixin flexCenter($direction) {
     display: flex;
     align-items: center;
@@ -40,6 +39,11 @@
 @mixin gradientButton {
     background: linear-gradient($colour-secondary, $colour-primary);
 }
+
+@mixin gradientColor {
+    color: linear-gradient($colour-secondary, $colour-primary);
+}
+
 
 @mixin fontType {
     font-family: "Roboto Regular", sans-serif;

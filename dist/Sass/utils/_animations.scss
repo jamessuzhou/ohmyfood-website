@@ -41,9 +41,9 @@
     width: map-get($widths, "100Percent");
     height: 100%;
     @include flexCenter(row);
-    animation: disappear 1000ms ease 1000ms;
+    animation: disappear $longTime ease $longTime;
     animation-fill-mode: forwards;
-    transition: opacity 1000ms, visibility 1000ms;
+    transition: opacity $longTime, visibility $longTime;
 
     &--spinner {
         z-index: 999999;

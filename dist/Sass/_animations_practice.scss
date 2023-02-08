@@ -24,7 +24,7 @@
     background-color: red;
     animation: disappear 0s ease-out 2s;
     animation-fill-mode: forwards;
-    transition: opacity 1000ms, visibility 1000ms;
+    transition: opacity $longTime, visibility $longTime;
 }
 
 @keyframes disappear {
@@ -96,7 +96,7 @@
         padding: $somePadding;
         border: 2px solid blue;
         width: 100%;
-        transition: ease-in-out 300ms;
+        transition: ease-in-out $mediumTime;
 
         p {
             overflow: hidden;
@@ -119,7 +119,7 @@
 
         p {
             transform: rotate(-180deg);
-            transition: ease-in-out 300ms;
+            transition: ease-in-out $mediumTime;
 
         }
     }
@@ -130,7 +130,7 @@
 
         p {
             transform: rotate(0deg);
-            transition: ease-in-out 300ms 100ms;
+            transition: ease-in-out $mediumTime $shortTime;
 
         }
     }
@@ -145,9 +145,9 @@
     width: map-get($widths, "100Percent");
     height: 100%;
     @include flexCenter(row);
-    animation: disappear 1000ms ease 1000ms;
+    animation: disappear $longTime ease $longTime;
     animation-fill-mode: forwards;
-    transition: opacity 1000ms, visibility 1000ms;
+    transition: opacity $longTime, visibility $longTime;
 
     &--spinner {
         z-index: 999999;
@@ -208,7 +208,7 @@ body {
     padding: 1.85rem 3rem;
     border-radius: 10rem;
     transform: scale(1);
-    transition: background-color 300ms 150ms, transform 450ms;
+    transition: background-color $mediumTime 150ms, transform 450ms;
 
     &:active {
         transform: scale(1.15);
@@ -348,7 +348,7 @@ body {
         background-color: blue;
         width: 0%;
         transform: translateX(100%);
-        transition: background-color 300ms 150ms, width 450ms, ease-in-out 300ms;
+        transition: background-color $mediumTime 150ms, width 450ms, ease-in-out $mediumTime;
     }
 
     &:hover .right {

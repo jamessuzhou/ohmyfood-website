@@ -8,7 +8,7 @@
     color: $colour-white;
     width: 50%;
     cursor: pointer;
-    transition: filter 300ms 100ms, box-shadow 300ms;
+    transition: filter $mediumTime $shortTime, box-shadow $mediumTime;
 
 
     &:hover {
@@ -16,4 +16,3 @@
         filter: brightness(110%);
     }
 }
-

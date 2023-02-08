@@ -1,4 +1,5 @@
 $colour-primary: #9356DC;
+$colour-primary-opaque: rgb(147, 86, 220, 0.1);
 $colour-secondary: #FF79DA;
 $colour-secondary-opaque: rgb(255, 121, 218, 0.4);
 $colour-tertiary: #99E2D0;
@@ -39,3 +40,7 @@ $widths: (
 
 $borderradius: 20px;
 $spacedLetters: 0.3px;
+
+$shortTime: 100ms;
+$mediumTime: 300ms;
+$longTime: 1000ms;

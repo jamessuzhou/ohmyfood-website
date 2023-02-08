@@ -5,20 +5,27 @@
 
 .explainer {
     @include flexCenter(row);
+
     @include mobile {
         width: map-get($widths, "80Percent");
 
-    };
+    }
+
+    ;
 
     @include tablet {
         width: map-get($widths, "70Percent");
 
-    };
+    }
+
+    ;
 
     @include desktop {
         width: map-get($widths, "60Percent");
 
-    };
+    }
+
+    ;
 
     box-shadow: $shadow-box;
     justify-content: flex-start;
@@ -27,8 +34,7 @@
     border-radius: 20px;
     align-items: left;
     background-color: $colour-background;
-    
-        height: 70px;
+    height: 70px;
     margin: 10px;
     font-weight: 600;
 
@@ -50,12 +56,29 @@
     &--text {
         padding-left: 30px;
     }
+
+    &--2 {
+        @extend .explainer;
+        background-color: $colour-primary-opaque;
+
+        &--icon {
+            color: $colour-primary;
+        }
+    }
 }
 
 
 
 .card {
     box-shadow: $shadow-box;
+
+    &:hover {
+        box-shadow: $shadow-box-dark;
+
+        .card__bottom {
+            color: $colour-primary;
+        }
+    }
 
     @include mobile {
         width: map-get($widths, "90Percent");
@@ -90,7 +113,7 @@
         position: relative;
 
         &__img {
-            height: 180px;
+            height: 250px;
             border-radius: 15px 15px 0 0;
         }
 
@@ -115,13 +138,7 @@
     }
 
     &__text {
-        margin: 0 10px;
-        padding: 15px;
-        width: 70%;
-
-        &:hover {
-            color: $colour-primary
-        }
+        padding-left: $somePadding;
     }
 
     &__heart {
@@ -136,9 +153,9 @@
         }
 
         &--full {
+            @include transitionsPointSix;
             color: $colour-primary;
             opacity: 0;
-            @include transitionsPointSix;
             position: absolute;
             top: -10px;
             right: 20px;
@@ -149,6 +166,8 @@
             opacity: 1;
         }
     }
+
+
 }
 
 .restaurant-heading {
@@ -222,7 +241,7 @@
                 width: map-get($widths, "60Percent");
 
             }
-            
+
 
             justify-items: flex-start;
             text-transform: uppercase;
@@ -264,7 +283,7 @@
             &__text {
                 padding: 0 20px;
                 width: 90%;
-                transition: ease-in-out 300ms;
+                transition: ease-in-out $mediumTime;
 
                 &__name {
                     font-size: x-large;
@@ -307,11 +326,11 @@
                 width: 0%;
                 height: 100%;
                 transform: translateX(100px);
-                transition: ease-in-out 300ms;
+                transition: ease-in-out $mediumTime;
 
                 i {
                     transform: rotate(-180deg);
-                    transition: ease-in 300ms 100ms;
+                    transition: ease-in $mediumTime $shortTime;
 
                 }
 
