@@ -5,28 +5,7 @@
 
 .explainer {
     @include flexCenter(row);
-
-    @include mobile {
-        width: map-get($widths, "80Percent");
-
-    }
-
-    ;
-
-    @include tablet {
-        width: map-get($widths, "70Percent");
-
-    }
-
-    ;
-
-    @include desktop {
-        width: map-get($widths, "60Percent");
-
-    }
-
-    ;
-
+    width: map-get($widths, "80Percent");
     box-shadow: $shadow-box;
     justify-content: flex-start;
     padding-left: 40px;
@@ -219,139 +198,131 @@
     font-family: "Roboto Regular", sans-serif;
     width: 100%;
 
-    &__section {
-        @include flexCenter(column);
-        width: 100%;
-        margin: 20px 0;
+    &__subheading {
+        @include mobile {
+            width: map-get($widths, "90Percent");
 
-
-
-        &__subheading {
-            @include mobile {
-                width: map-get($widths, "90Percent");
-
-            }
-
-            @include tablet {
-                width: map-get($widths, "80Percent");
-
-            }
-
-            @include desktop {
-                width: map-get($widths, "60Percent");
-
-            }
-
-
-            justify-items: flex-start;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-
-            &__border {
-                border-bottom: 3px solid $colour-tertiary;
-                width: 7%;
-            }
         }
 
-        &__item {
+        @include tablet {
+            width: map-get($widths, "80Percent");
+
+        }
+
+        @include desktop {
+            width: map-get($widths, "60Percent");
+
+        }
 
 
-            @include mobile {
-                width: map-get($widths, "90Percent");
+        justify-items: flex-start;
+        text-transform: uppercase;
+        margin-bottom: 15px;
 
-            }
+        &__border {
+            border-bottom: 3px solid $colour-tertiary;
+            width: 7%;
+        }
+    }
 
-            @include tablet {
-                width: map-get($widths, "80Percent");
-
-            }
-
-            @include desktop {
-                width: map-get($widths, "60Percent");
-
-            }
-
-            @include flexLeft(row);
-            height: 120px;
-            background-color: $colour-white;
-            border-radius: 25px;
-            box-shadow: $shadow-box;
-            overflow: hidden;
-            margin-bottom: 20px;
+    &__item {
 
 
-            &__text {
-                padding: 0 20px;
-                width: 90%;
-                transition: ease-in-out $mediumTime;
+        @include mobile {
+            width: map-get($widths, "90Percent");
 
-                &__name {
-                    font-size: x-large;
-                    font-weight: bold;
-                }
+        }
 
-                &__description {
-                    position: relative;
+        @include tablet {
+            width: map-get($widths, "80Percent");
 
-                    p {
-                        margin-bottom: 5px;
-                        width: 100%;
-                        white-space: nowrap;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                    }
-                }
-            }
+        }
 
-            &:hover &__text {
-                width: 80%;
-            }
+        @include desktop {
+            width: map-get($widths, "60Percent");
 
-            &__price {
-                @include flexCenter(row);
-                height: 100%;
-                width: 15%;
-                margin-top: 25px;
-                font-weight: bold;
-                margin-left: -25px;
-            }
+        }
+
+        @include flexLeft(row);
+        height: 120px;
+        background-color: $colour-white;
+        border-radius: 25px;
+        box-shadow: $shadow-box;
+        overflow: hidden;
+        margin-bottom: 20px;
 
 
+        &__text {
+            padding: 0 20px;
+            width: 90%;
+            transition: ease-in-out $mediumTime;
 
-            &__checkmark {
-                @include flexCenter(row);
-                color: $colour-white;
+            &__name {
                 font-size: x-large;
-                background-color: $colour-tertiary;
-                width: 0%;
-                height: 100%;
-                transform: translateX(100px);
-                transition: ease-in-out $mediumTime;
+                font-weight: bold;
+            }
 
-                i {
-                    transform: rotate(-180deg);
-                    transition: ease-in $mediumTime $shortTime;
+            &__description {
+                position: relative;
 
+                p {
+                    margin-bottom: 5px;
+                    width: 100%;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                 }
-
-
             }
+        }
 
-            &:hover &__checkmark {
-                transform: translateX(0);
-                width: 15%;
+        &:hover &__text {
+            width: 80%;
+        }
 
-            }
-
-            &:hover i {
-                transform: rotate(0deg);
-
-            }
-
+        &__price {
+            @include flexCenter(row);
+            height: 100%;
+            width: 15%;
+            margin-top: 25px;
+            font-weight: bold;
+            margin-left: -25px;
         }
 
 
 
+        &__checkmark {
+            @include flexCenter(row);
+            color: $colour-white;
+            font-size: x-large;
+            background-color: $colour-tertiary;
+            width: 0%;
+            height: 100%;
+            transform: translateX(100px);
+            transition: ease-in-out $mediumTime;
+
+            i {
+                transform: rotate(-180deg);
+                transition: ease-in $mediumTime $shortTime;
+
+            }
+
+
+        }
+
+        &:hover &__checkmark {
+            transform: translateX(0);
+            width: 15%;
+
+        }
+
+        &:hover i {
+            transform: rotate(0deg);
+
+        }
 
     }
+
+
+
+
 }

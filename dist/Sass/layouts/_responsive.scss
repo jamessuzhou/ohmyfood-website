@@ -1,0 +1,147 @@
+.container--restaurants {
+    @include desktop {
+        @include flexCenter(row);
+
+        .subheading {
+            display: none;
+        }
+
+        .card {
+            margin: 0px 15px;
+            height: 400px;
+
+            &__top {
+                height: 75%;
+            }
+
+            img {
+                height: 300px;
+            }
+
+            &__bottom {
+                height: 25%;
+            }
+
+        }
+
+    }
+}
+
+.container--howItWorks--cards {
+    @include desktop {
+        @include flexCenter(row);
+        width: map-get($widths, "90Percent");
+        justify-content: space-around;
+    }
+
+    ;
+
+    @include tablet {
+        @include flexCenter(row);
+        width: map-get($widths, "90Percent");
+        justify-content: space-around;
+    }
+}
+
+.container--imageAndMenu {
+    @include tablet  {
+        &--menuAndHeading {
+            margin-top: -120px;
+            margin-bottom: 30px;
+            width: 90%;
+            border-radius: 40px;
+
+        }
+    }
+
+    @include desktop {
+        position: relative;
+
+        &--menuAndHeading {
+            position: absolute;
+            height: 95%;
+            width: 50%;
+            border-radius: 40px;
+            margin-right: -40vw;
+        }
+
+        &--restaurant-img {
+            height: 190vh;
+
+            & img {
+                opacity: 0.7;
+            }
+        }
+    }
+}
+
+
+
+.container--order {
+    border-radius: 40px;
+    padding-bottom: $somePadding;
+}
+
+.restaurant-heading {
+    @include desktop {
+        width: 80%;
+    }
+}
+
+.menu {
+    @include desktop {
+        height: 90%;
+        width: 100%;
+
+        &__subheading {
+            width: 90%;
+            @include flexCenter(column);
+
+            &__border {
+                width: 100%;
+                margin: -10px 0 0 0;
+            }
+        }
+
+        &__item {
+            width: 90%;
+        }
+    }
+
+}
+
+.explainer {
+    @include tablet {
+        width: map-get($widths, "30Percent");
+
+    }
+
+    ;
+
+    @include desktop {
+        width: map-get($widths, "30Percent");
+    }
+
+    ;
+}
+
+.footer__container {
+    @include desktop {
+        @include flexLeft(row);
+
+        .footer-title {
+            margin: auto;
+            padding-right: 50px;
+        }
+    }
+}
+
+
+
+.list {
+    @include desktop {
+        @include flexLeft(row);
+        width: map-get($widths, "100Percent");
+        justify-content: space-between;
+    }
+}

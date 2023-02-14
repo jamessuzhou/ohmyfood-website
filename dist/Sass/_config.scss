@@ -6,9 +6,4 @@ $primary-color: red;
     align-items: center;
 }
 
-@mixin laptop {
-    @media screen and (min-width:992px) {
-        @content;
-    }
-}
 

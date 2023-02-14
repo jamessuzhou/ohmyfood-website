@@ -3,7 +3,7 @@
     @include fontType;
     width: map-get($widths, "100Percent");
 
-    &--2 {
+    &--booking {
         @extend .container;
         background-color: $colour-background;
         padding: 30px 0;
@@ -20,7 +20,11 @@
         }
     }
 
-    &--3 {
+    &--restaurants {
+        @extend .container--booking;
+    }
+
+    &--search {
         @include flexCenter(row);
         width: map-get($widths, "100Percent");
         background-color: #EAEAEA;
@@ -48,25 +52,39 @@
 
     }
 
-    &--4 {
-        @extend .container;
-        background-color: $colour-background;
-        border-radius: 40px 40px 0 0;
-        margin-top: -40px;
-        margin-bottom: 0;
 
 
-    }
-
-    &--5 {
+    &--howItWorks {
         @extend .container;
         padding: 30px 0;
+
+        &--cards {
+            @extend .container;
+        }
     }
 
-    &--6 {
+    &--pictureAndMenu {
+        @extend .container;
+    }
+
+    &--order {
         @extend .container;
         background-color: $colour-background;
         padding-bottom: 80px;
     }
+
+    &--imageAndMenu {
+        @extend .container;
+
+        &--menuAndHeading {
+            @extend .container--imageAndMenu;
+            background-color: $colour-background;
+            border-radius: 40px 40px 0 0;
+            margin-top: -40px;
+            margin-bottom: 0;
+        }
+    }
+
+
 
 }

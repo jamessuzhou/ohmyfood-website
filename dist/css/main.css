@@ -529,7 +529,7 @@ img {
   }
   100% {
     transform: translateY(0);
-    opacity: 100%;
+    opacity: 1;
   }
 }
 
@@ -540,67 +540,52 @@ img {
   }
   100% {
     transform: translateY(0);
-    opacity: 100%;
+    opacity: 1;
   }
 }
-.loader {
-  z-index: 9999;
-  background: #F6F6F6;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  -webkit-animation: disappear 1000ms ease 1000ms;
-          animation: disappear 1000ms ease 1000ms;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  transition: opacity 1000ms, visibility 1000ms;
-}
-.loader--spinner {
-  z-index: 999999;
-  border: 15px solid #9356DC;
-  border-top-color: #FF79DA;
-  opacity: 0.75;
-  width: 75px;
-  height: 75px;
-  border-radius: 50%;
-  -webkit-animation: loading 750ms ease infinite;
-          animation: loading 750ms ease infinite;
-}
-@-webkit-keyframes loading {
-  from {
-    transform: rotate(0turn);
-  }
-  to {
-    transform: rotate(1turn);
-  }
-}
-@keyframes loading {
-  from {
-    transform: rotate(0turn);
-  }
-  to {
-    transform: rotate(1turn);
-  }
-}
-@-webkit-keyframes disappear {
-  to {
-    visibility: hidden;
-    opacity: 0;
-  }
-}
-@keyframes disappear {
-  to {
-    visibility: hidden;
-    opacity: 0;
-  }
-}
+/* .loader {
+    z-index: 9999;
+    background: $colour-background;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: map-get($widths, "100Percent");
+    height: 100%;
+    @include flexCenter(row);
+    animation: disappear $longTime ease $longTime;
+    animation-fill-mode: forwards;
+    transition: opacity $longTime, visibility $longTime;
 
+    &--spinner {
+        z-index: 999999;
+        border: 15px solid $colour-primary;
+        border-top-color: $colour-secondary;
+        opacity: 0.75;
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+        animation: loading 750ms ease infinite;
+    }
+
+    @keyframes loading {
+        from {
+            transform: rotate(0turn);
+        }
+
+        to {
+            transform: rotate(1turn);
+        }
+    }
+
+    @keyframes disappear {
+        to {
+            visibility: hidden;
+            opacity: 0;
+        }
+    }
+
+
+} */
 .reponsive-test {
   border: 2px solid red;
 }
@@ -613,7 +598,7 @@ img {
     flex-direction: row;
   }
 }
-@media all and (min-width: 768px) {
+@media all and (min-width: 768px) and (max-width: 992px) {
   .reponsive-test {
     background-color: green;
     display: flex;
@@ -639,6 +624,13 @@ img {
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   transition: opacity 1000ms, visibility 1000ms;
+}
+
+@-webkit-keyframes disappear {
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
 }
 
 @keyframes disappear {
@@ -1219,50 +1211,51 @@ img {
   transition: ease-in-out 300ms 100ms;
 }
 
-.loader {
-  z-index: 9999;
-  background: #F6F6F6;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  -webkit-animation: disappear 1000ms ease 1000ms;
-          animation: disappear 1000ms ease 1000ms;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  transition: opacity 1000ms, visibility 1000ms;
-}
-.loader--spinner {
-  z-index: 999999;
-  border: 15px solid #9356DC;
-  border-top-color: #FF79DA;
-  opacity: 0.75;
-  width: 75px;
-  height: 75px;
-  border-radius: 50%;
-  -webkit-animation: loading 750ms ease infinite;
-          animation: loading 750ms ease infinite;
-}
-@keyframes loading {
-  from {
-    transform: rotate(0turn);
-  }
-  to {
-    transform: rotate(1turn);
-  }
-}
-@keyframes disappear {
-  to {
-    visibility: hidden;
-    opacity: 0;
-  }
-}
+/*.loader {
+    z-index: 9999;
+    background: $colour-background;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: map-get($widths, "100Percent");
+    height: 100%;
+    @include flexCenter(row);
+    animation: disappear $longTime ease $longTime;
+    animation-fill-mode: forwards;
+    transition: opacity $longTime, visibility $longTime;
 
+    &--spinner {
+        z-index: 999999;
+        border: 15px solid $colour-primary;
+        border-top-color: $colour-secondary;
+        opacity: 0.75;
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+        animation: loading 750ms ease infinite;
+    }
+
+    @keyframes loading {
+        from {
+            transform: rotate(0turn);
+        }
+
+        to {
+            transform: rotate(1turn);
+        }
+    }
+
+
+
+    @keyframes disappear {
+        to {
+            visibility: hidden;
+            opacity: 0;
+        }
+    }
+
+
+}*/
 body {
   margin: 0;
   box-sizing: border-box;
@@ -1438,6 +1431,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: row;
+  width: 80%;
   box-shadow: 5px 5px 15px lightgrey;
   justify-content: flex-start;
   padding-left: 40px;
@@ -1448,21 +1442,6 @@ body {
   height: 70px;
   margin: 10px;
   font-weight: 600;
-}
-@media all and (min-width: 0px) {
-  .explainer, .explainer--2 {
-    width: 80%;
-  }
-}
-@media all and (min-width: 768px) {
-  .explainer, .explainer--2 {
-    width: 70%;
-  }
-}
-@media all and (min-width: 992px) {
-  .explainer, .explainer--2 {
-    width: 60%;
-  }
 }
 .explainer--number {
   display: flex;
@@ -1508,7 +1487,7 @@ body {
     width: 90%;
   }
 }
-@media all and (min-width: 768px) {
+@media all and (min-width: 768px) and (max-width: 992px) {
   .card {
     width: 80%;
   }
@@ -1587,7 +1566,7 @@ body {
     width: 90%;
   }
 }
-@media all and (min-width: 768px) {
+@media all and (min-width: 768px) and (max-width: 992px) {
   .restaurant-heading {
     width: 80%;
   }
@@ -1624,39 +1603,31 @@ body {
   font-family: "Roboto Regular", sans-serif;
   width: 100%;
 }
-.menu__section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 100%;
-  margin: 20px 0;
-}
-.menu__section__subheading {
+.menu__subheading {
   justify-items: flex-start;
   text-transform: uppercase;
   margin-bottom: 15px;
 }
 @media all and (min-width: 0px) {
-  .menu__section__subheading {
+  .menu__subheading {
     width: 90%;
   }
 }
-@media all and (min-width: 768px) {
-  .menu__section__subheading {
+@media all and (min-width: 768px) and (max-width: 992px) {
+  .menu__subheading {
     width: 80%;
   }
 }
 @media all and (min-width: 992px) {
-  .menu__section__subheading {
+  .menu__subheading {
     width: 60%;
   }
 }
-.menu__section__subheading__border {
+.menu__subheading__border {
   border-bottom: 3px solid #99E2D0;
   width: 7%;
 }
-.menu__section__item {
+.menu__item {
   display: flex;
   align-items: flex-start;
   justify-content: left;
@@ -1669,43 +1640,43 @@ body {
   margin-bottom: 20px;
 }
 @media all and (min-width: 0px) {
-  .menu__section__item {
+  .menu__item {
     width: 90%;
   }
 }
-@media all and (min-width: 768px) {
-  .menu__section__item {
+@media all and (min-width: 768px) and (max-width: 992px) {
+  .menu__item {
     width: 80%;
   }
 }
 @media all and (min-width: 992px) {
-  .menu__section__item {
+  .menu__item {
     width: 60%;
   }
 }
-.menu__section__item__text {
+.menu__item__text {
   padding: 0 20px;
   width: 90%;
   transition: ease-in-out 300ms;
 }
-.menu__section__item__text__name {
+.menu__item__text__name {
   font-size: x-large;
   font-weight: bold;
 }
-.menu__section__item__text__description {
+.menu__item__text__description {
   position: relative;
 }
-.menu__section__item__text__description p {
+.menu__item__text__description p {
   margin-bottom: 5px;
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.menu__section__item:hover .menu__section__item__text {
+.menu__item:hover .menu__item__text {
   width: 80%;
 }
-.menu__section__item__price {
+.menu__item__price {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1716,7 +1687,7 @@ body {
   font-weight: bold;
   margin-left: -25px;
 }
-.menu__section__item__checkmark {
+.menu__item__checkmark {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1729,15 +1700,15 @@ body {
   transform: translateX(100px);
   transition: ease-in-out 300ms;
 }
-.menu__section__item__checkmark i {
+.menu__item__checkmark i {
   transform: rotate(-180deg);
   transition: ease-in 300ms 100ms;
 }
-.menu__section__item:hover .menu__section__item__checkmark {
+.menu__item:hover .menu__item__checkmark {
   transform: translateX(0);
   width: 15%;
 }
-.menu__section__item:hover i {
+.menu__item:hover i {
   transform: rotate(0deg);
 }
 
@@ -1767,7 +1738,7 @@ header .back-arrow a :hover {
   color: #9356DC;
 }
 
-.container, .container--6, .container--5, .container--4, .container--2 {
+.container, .container--imageAndMenu, .container--imageAndMenu--menuAndHeading, .container--order, .container--pictureAndMenu, .container--howItWorks--cards, .container--howItWorks, .container--booking, .container--restaurants {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1777,19 +1748,19 @@ header .back-arrow a :hover {
   font-size: large;
   width: 100%;
 }
-.container--2 {
+.container--booking, .container--restaurants {
   background-color: #F6F6F6;
   padding: 30px 0;
 }
-.container--2 .subheading {
+.container--booking .subheading, .container--restaurants .subheading {
   justify-content: center;
 }
-.container--2 .info {
+.container--booking .info, .container--restaurants .info {
   padding: 20px;
   text-align: center;
   font-weight: 100;
 }
-.container--3 {
+.container--search {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1799,7 +1770,7 @@ header .back-arrow a :hover {
   height: 50px;
   box-shadow: inset 0px 2px 5px 0px lightgray;
 }
-.container--3 input {
+.container--search input {
   background: transparent;
   border: 0;
   outline: none;
@@ -1807,36 +1778,36 @@ header .back-arrow a :hover {
   font-size: large;
   text-align: center;
 }
-.container--3 input:focus::-moz-placeholder {
+.container--search input:focus::-moz-placeholder {
   color: transparent;
 }
-.container--3 input:focus:-ms-input-placeholder {
+.container--search input:focus:-ms-input-placeholder {
   color: transparent;
 }
-.container--3 input:focus::placeholder {
+.container--search input:focus::placeholder {
   color: transparent;
 }
-.container--3 ::-moz-placeholder {
+.container--search ::-moz-placeholder {
   color: black;
 }
-.container--3 :-ms-input-placeholder {
+.container--search :-ms-input-placeholder {
   color: black;
 }
-.container--3 ::placeholder {
+.container--search ::placeholder {
   color: black;
 }
-.container--4 {
+.container--howItWorks {
+  padding: 30px 0;
+}
+.container--order {
+  background-color: #F6F6F6;
+  padding-bottom: 80px;
+}
+.container--imageAndMenu--menuAndHeading {
   background-color: #F6F6F6;
   border-radius: 40px 40px 0 0;
   margin-top: -40px;
   margin-bottom: 0;
-}
-.container--5 {
-  padding: 30px 0;
-}
-.container--6 {
-  background-color: #F6F6F6;
-  padding-bottom: 80px;
 }
 
 .subheading {
@@ -1853,7 +1824,7 @@ header .back-arrow a :hover {
     width: 90%;
   }
 }
-@media all and (min-width: 768px) {
+@media all and (min-width: 768px) and (max-width: 992px) {
   .subheading {
     justify-content: center;
   }
@@ -1896,15 +1867,142 @@ footer {
   font-size: x-large;
 }
 
-@media all and (min-width: 768px) {
-  .restaurant-img {
-    width: 100%;
+@media all and (min-width: 992px) {
+  .container--restaurants {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+  .container--restaurants .subheading {
+    display: none;
+  }
+  .container--restaurants .card {
+    margin: 0px 15px;
     height: 400px;
+  }
+  .container--restaurants .card__top {
+    height: 75%;
+  }
+  .container--restaurants .card img {
+    height: 300px;
+  }
+  .container--restaurants .card__bottom {
+    height: 25%;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .container--howItWorks--cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-around;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 992px) {
+  .container--howItWorks--cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-around;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 992px) {
+  .container--imageAndMenu--menuAndHeading {
+    margin-top: -120px;
+    margin-bottom: 30px;
+    width: 90%;
+    border-radius: 40px;
   }
 }
 @media all and (min-width: 992px) {
-  .restaurant-img {
+  .container--imageAndMenu, .container--imageAndMenu--menuAndHeading {
+    position: relative;
+  }
+  .container--imageAndMenu--menuAndHeading {
+    position: absolute;
+    height: 95%;
+    width: 50%;
+    border-radius: 40px;
+    margin-right: -40vw;
+  }
+  .container--imageAndMenu--restaurant-img {
+    height: 190vh;
+  }
+  .container--imageAndMenu--restaurant-img img {
+    opacity: 0.7;
+  }
+}
+
+.container--order {
+  border-radius: 40px;
+  padding-bottom: 20px;
+}
+
+@media all and (min-width: 992px) {
+  .restaurant-heading {
+    width: 80%;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .menu {
+    height: 90%;
     width: 100%;
-    height: 500px;
+  }
+  .menu__subheading {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .menu__subheading__border {
+    width: 100%;
+    margin: -10px 0 0 0;
+  }
+  .menu__item {
+    width: 90%;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 992px) {
+  .explainer, .explainer--2 {
+    width: 30%;
+  }
+}
+@media all and (min-width: 992px) {
+  .explainer, .explainer--2 {
+    width: 30%;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .footer__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: left;
+    flex-direction: row;
+  }
+  .footer__container .footer-title {
+    margin: auto;
+    padding-right: 50px;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .list {
+    display: flex;
+    align-items: flex-start;
+    justify-content: left;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
   }
 }/*# sourceMappingURL=main.css.map */
