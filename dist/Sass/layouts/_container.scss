@@ -21,8 +21,15 @@
     }
 
     &--restaurants {
-        @extend .container--booking;
+        @extend .container;
+
+        &__cards {
+            width: 100%;
+            padding: $somePadding
+        }
     }
+
+
 
     &--search {
         @include flexCenter(row);
@@ -84,7 +91,4 @@
             margin-bottom: 0;
         }
     }
-
-
-
 }

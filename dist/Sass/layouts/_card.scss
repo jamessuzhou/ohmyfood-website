@@ -59,20 +59,9 @@
         }
     }
 
-    @include mobile {
-        width: map-get($widths, "90Percent");
 
-    }
+    width: map-get($widths, "90Percent");
 
-    @include tablet {
-        width: map-get($widths, "80Percent");
-
-    }
-
-    @include desktop {
-        width: map-get($widths, "60Percent");
-
-    }
 
     background-color: white;
     border-radius: 20px;
@@ -150,37 +139,21 @@
 }
 
 .restaurant-heading {
-    @include mobile {
-        width: map-get($widths, "90Percent");
-
-    }
-
-    @include tablet {
-        width: map-get($widths, "80Percent");
-
-    }
-
-    @include desktop {
-        width: map-get($widths, "60Percent");
-
-    }
-
-    display: flex;
+    width: map-get($widths, "90Percent");
     justify-content: space-between;
-
     position: relative;
-    margin: 10px;
+    margin-top: $somePadding;
+    display: flex;
 
     &__title {
         @include flexLeft(row);
         font-family: "Shrikhand Regular", sans-serif;
-        font-size: 40px;
+        font-size: 30px;
 
     }
 
     & .card__heart {
         position: relative;
-        top: 0;
 
         &--empty {
             top: 10px;
@@ -197,6 +170,7 @@
     @include flexCenter(column);
     font-family: "Roboto Regular", sans-serif;
     width: 100%;
+    height: auto;
 
     &__subheading {
         @include mobile {
@@ -222,6 +196,7 @@
         &__border {
             border-bottom: 3px solid $colour-tertiary;
             width: 7%;
+            margin-top: -10px;
         }
     }
 
@@ -244,7 +219,7 @@
         }
 
         @include flexLeft(row);
-        height: 120px;
+        height: 90px;
         background-color: $colour-white;
         border-radius: 25px;
         box-shadow: $shadow-box;
@@ -253,21 +228,27 @@
 
 
         &__text {
-            padding: 0 20px;
-            width: 90%;
+            padding: 0 0 0 20px;
+            width: 80%;
             transition: ease-in-out $mediumTime;
 
             &__name {
-                font-size: x-large;
+                font-size: large;
                 font-weight: bold;
+
+                p {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
             }
 
             &__description {
                 position: relative;
+                font-size: medium;
 
                 p {
                     margin-bottom: 5px;
-                    width: 100%;
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
@@ -283,9 +264,9 @@
             @include flexCenter(row);
             height: 100%;
             width: 15%;
-            margin-top: 25px;
+            margin-top: 18px;
+            font-size: medium;
             font-weight: bold;
-            margin-left: -25px;
         }
 
 

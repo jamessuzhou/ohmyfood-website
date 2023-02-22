@@ -1,7 +1,8 @@
 footer {
-    @include flexCenter(row);
+    @include flexCenter(column);
     width: map-get($widths, "100Percent");
     background-color: $charcoal;
+    bottom: 0;
 }
 
 .footer__container {
@@ -11,22 +12,22 @@ footer {
     font-family: "Roboto Regular", sans-serif;
     letter-spacing: $spacedLetters;
 
-    & .fa-solid {
-        width: 22px;
+
+    &__title {
+        font-family: "Shrikhand Regular", sans-serif;
+        font-size: x-large;
+        margin-top: 18px;
     }
 
-    & p {
+    &--list {
 
-        & a {
+        & .fa-solid {
+            width: 22px;
+        }
+
+        a {
             text-decoration: none;
-            color: inherit;
+            color: $colour-white
         }
     }
-
-    .footer-title {
-        margin-top: 20px;
-        font-family: Shrikhand Regular, sans-serif;
-        font-size: x-large;
-    }
-
 }

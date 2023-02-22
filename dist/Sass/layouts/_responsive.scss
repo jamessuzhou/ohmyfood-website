@@ -1,37 +1,51 @@
 .container--restaurants {
-    @include desktop {
-        @include flexCenter(row);
+    @include mobile {
+        &__cards {
+            @include flexCenter(column);
+        }
+    }
 
-        .subheading {
-            display: none;
+    @include desktop {
+        &__cards {
+            @include flexCenter(row);
+        }
+    }
+}
+
+@include desktop {
+
+    .card {
+        margin: 0px 15px;
+        height: 400px;
+
+        &__top {
+            height: 75%;
         }
 
-        .card {
-            margin: 0px 15px;
-            height: 400px;
+        img {
+            height: 300px;
+        }
 
-            &__top {
-                height: 75%;
-            }
-
-            img {
-                height: 300px;
-            }
-
-            &__bottom {
-                height: 25%;
-            }
-
+        &__bottom {
+            height: 25%;
         }
 
     }
+
 }
+
+
 
 .container--howItWorks--cards {
     @include desktop {
         @include flexCenter(row);
         width: map-get($widths, "90Percent");
         justify-content: space-around;
+
+
+        .explainer {
+            margin: 0 $somePadding;
+        }
     }
 
     ;
@@ -40,13 +54,17 @@
         @include flexCenter(row);
         width: map-get($widths, "90Percent");
         justify-content: space-around;
+
+        .explainer {
+            margin: 0 $somePadding;
+        }
     }
 }
 
 .container--imageAndMenu {
-    @include tablet  {
+    @include tablet {
         &--menuAndHeading {
-            margin-top: -120px;
+            margin-top: -40px;
             margin-bottom: 30px;
             width: 90%;
             border-radius: 40px;
@@ -59,14 +77,13 @@
 
         &--menuAndHeading {
             position: absolute;
-            height: 95%;
             width: 50%;
             border-radius: 40px;
             margin-right: -40vw;
+            margin-top: auto;
         }
 
         &--restaurant-img {
-            height: 190vh;
 
             & img {
                 opacity: 0.7;
@@ -82,9 +99,17 @@
     padding-bottom: $somePadding;
 }
 
-.restaurant-heading {
+
+
+.container--imageAndMenu--restaurant-img {
+    @include mobile {
+        height: 300px;
+        width: 100%;
+
+    }
+
     @include desktop {
-        width: 80%;
+        height: 160vh;
     }
 }
 
@@ -129,19 +154,16 @@
     @include desktop {
         @include flexLeft(row);
 
-        .footer-title {
+        &__title {
+            width: 20%;
             margin: auto;
-            padding-right: 50px;
+        }
+
+        &--list {
+            @include flexLeft(row);
+            width: 80%;
+            justify-content: space-between;
         }
     }
-}
 
-
-
-.list {
-    @include desktop {
-        @include flexLeft(row);
-        width: map-get($widths, "100Percent");
-        justify-content: space-between;
-    }
 }
