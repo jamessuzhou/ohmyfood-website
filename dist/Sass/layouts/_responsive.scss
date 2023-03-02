@@ -1,18 +1,81 @@
-.container--restaurants {
-    @include mobile {
-        &__cards {
-            @include flexCenter(column);
+@include mobile {
+    .container--restaurants__cards {
+        @include flexCenter(column);
+    }
+
+    .container--imageAndMenu--restaurant-img {
+        height: 300px;
+        width: 100%;
+
+    }
+
+    .subheading {
+        @include subheadingStyle;
+        @include flexLeft(row);
+        width: map-get($widths, "90Percent");
+    }
+
+    .menu {
+        &__subheading {
+            width: map-get($widths, "90Percent");
+        }
+
+        &__item {
+            width: map-get($widths, "90Percent");
+        }
+
+    }
+
+}
+
+
+@include tablet {
+    .container--howItWorks--cards {
+        @include flexCenter(row);
+        width: map-get($widths, "90Percent");
+        justify-content: space-around;
+
+        .explainer {
+            margin: 0 $somePadding;
         }
     }
 
-    @include desktop {
-        &__cards {
-            @include flexCenter(row);
+    .container--imageAndMenu {
+        &--menuAndHeading {
+            margin-top: -40px;
+            margin-bottom: 30px;
+            width: 90%;
+            border-radius: 40px;
+
         }
     }
+
+    .explainer {
+
+        width: map-get($widths, "30Percent");
+
+        .subheading {
+            justify-content: center;
+        }
+
+    }
+
 }
 
 @include desktop {
+
+
+    .subheading {
+        justify-content: center;
+    }
+
+    .explainer {
+        width: map-get($widths, "30Percent");
+    }
+
+    .container--restaurants__cards {
+        @include flexCenter(row);
+    }
 
     .card {
         margin: 0px 15px;
@@ -32,12 +95,24 @@
 
     }
 
-}
+    .menu {
+        height: 90%;
+        width: 100%;
+
+        &__subheading {
+            @include flexCenter(column);
+
+            &__border {
+                width: 100%;
+                margin: -10px 0 0 0;
+            }
+        }
+
+    }
 
 
 
-.container--howItWorks--cards {
-    @include desktop {
+    .container--howItWorks--cards {
         @include flexCenter(row);
         width: map-get($widths, "90Percent");
         justify-content: space-around;
@@ -48,31 +123,7 @@
         }
     }
 
-    ;
-
-    @include tablet {
-        @include flexCenter(row);
-        width: map-get($widths, "90Percent");
-        justify-content: space-around;
-
-        .explainer {
-            margin: 0 $somePadding;
-        }
-    }
-}
-
-.container--imageAndMenu {
-    @include tablet {
-        &--menuAndHeading {
-            margin-top: -40px;
-            margin-bottom: 30px;
-            width: 90%;
-            border-radius: 40px;
-
-        }
-    }
-
-    @include desktop {
+    .container--imageAndMenu {
         position: relative;
 
         &--menuAndHeading {
@@ -84,74 +135,21 @@
         }
 
         &--restaurant-img {
+            height: 180vh;
 
             & img {
                 opacity: 0.7;
             }
         }
-    }
-}
-
-
-
-.container--order {
-    border-radius: 40px;
-    padding-bottom: $somePadding;
-}
-
-
-
-.container--imageAndMenu--restaurant-img {
-    @include mobile {
-        height: 300px;
-        width: 100%;
 
     }
 
-    @include desktop {
-        height: 160vh;
-    }
-}
-
-.menu {
-    @include desktop {
-        height: 90%;
-        width: 100%;
-
-        &__subheading {
-            width: 90%;
-            @include flexCenter(column);
-
-            &__border {
-                width: 100%;
-                margin: -10px 0 0 0;
-            }
-        }
-
-        &__item {
-            width: 90%;
-        }
+    .container--order {
+        border-radius: 40px;
+        padding-bottom: $somePadding;
     }
 
-}
-
-.explainer {
-    @include tablet {
-        width: map-get($widths, "30Percent");
-
-    }
-
-    ;
-
-    @include desktop {
-        width: map-get($widths, "30Percent");
-    }
-
-    ;
-}
-
-.footer__container {
-    @include desktop {
+    .footer__container {
         @include flexLeft(row);
 
         &__title {

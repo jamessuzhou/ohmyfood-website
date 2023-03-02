@@ -52,7 +52,7 @@
         width: 75px;
         height: 75px;
         border-radius: 50%;
-        animation: loading 750ms ease infinite;
+        animation: loading $longTime ease infinite;
     }
 
     @keyframes loading {

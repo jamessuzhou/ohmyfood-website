@@ -56,3 +56,13 @@
     font-weight: 600;
     padding: $somePadding;
 }
+
+
+@mixin fontRoboto {
+    font-family: 'Roboto', sans-serif;
+
+}
+
+@mixin fontShrikhand {
+    font-family: 'Shrikhand', cursive;
+}

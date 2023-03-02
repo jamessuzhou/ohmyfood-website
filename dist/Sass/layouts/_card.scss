@@ -11,7 +11,6 @@
     padding-left: 40px;
     position: relative;
     border-radius: 20px;
-    align-items: left;
     background-color: $colour-background;
     height: 70px;
     margin: 10px;
@@ -173,22 +172,6 @@
     height: auto;
 
     &__subheading {
-        @include mobile {
-            width: map-get($widths, "90Percent");
-
-        }
-
-        @include tablet {
-            width: map-get($widths, "80Percent");
-
-        }
-
-        @include desktop {
-            width: map-get($widths, "60Percent");
-
-        }
-
-
         justify-items: flex-start;
         text-transform: uppercase;
         margin-bottom: 15px;
@@ -201,22 +184,6 @@
     }
 
     &__item {
-
-
-        @include mobile {
-            width: map-get($widths, "90Percent");
-
-        }
-
-        @include tablet {
-            width: map-get($widths, "80Percent");
-
-        }
-
-        @include desktop {
-            width: map-get($widths, "60Percent");
-
-        }
 
         @include flexLeft(row);
         height: 90px;
