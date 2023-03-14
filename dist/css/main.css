@@ -699,11 +699,11 @@ img {
   flex-direction: row;
   justify-content: space-between;
 }
+.card__bottom:hover {
+  color: #9356DC;
+}
 .card__text {
   padding-left: 20px;
-}
-.card__text:hover {
-  color: #9356DC;
 }
 .card__heart {
   position: relative;

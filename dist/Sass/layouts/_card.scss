@@ -87,14 +87,14 @@
   &__bottom {
     @include flexCenter(row);
     justify-content: space-between;
-  }
-
-  &__text {
-    padding-left: $somePadding;
 
     &:hover {
       color: $colour-primary;
     }
+  }
+
+  &__text {
+    padding-left: $somePadding;
   }
 
   &__heart {
