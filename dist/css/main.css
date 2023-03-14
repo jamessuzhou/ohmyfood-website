@@ -739,7 +739,7 @@ img {
   align-items: flex-start;
   justify-content: left;
   flex-direction: row;
-  font-family: "Shrikhand Regular", sans-serif;
+  font-family: "Shrikhand", cursive;
   font-size: 30px;
 }
 .restaurant-heading .card__heart {

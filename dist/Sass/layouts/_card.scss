@@ -144,7 +144,7 @@
 
     &__title {
         @include flexLeft(row);
-        font-family: "Shrikhand Regular", sans-serif;
+        @include fontShrikhand;
         font-size: 30px;
 
     }
