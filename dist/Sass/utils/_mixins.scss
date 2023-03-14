@@ -1,68 +1,70 @@
-@mixin heading-shadow($colour: lightness-shift($colour-primary), $offset: $heading-shadow-size) {
-    text-shadow: $offset $offset $colour;
+@mixin heading-shadow(
+  $colour: lightness-shift($colour-primary),
+  $offset: $heading-shadow-size
+) {
+  text-shadow: $offset $offset $colour;
 }
 
 @mixin mobile {
-    @media all and (min-width: map-get($breakpoints, "mobile")) {
-        @content;
-    }
+  @media all and (min-width: map-get($breakpoints, "mobile")) {
+    @content;
+  }
 }
 
 @mixin tablet {
-    @media all and (min-width: map-get($breakpoints, "tablet")) and (max-width: map-get($breakpoints, "desktop")) {
-        @content;
-    }
+  @media all and (min-width: map-get($breakpoints, "tablet")) and (max-width: map-get($breakpoints, "desktop")) {
+    @content;
+  }
 }
 
 @mixin desktop {
-    @media all and (min-width: map-get($breakpoints, "desktop")) {
-        @content;
-    }
+  @media all and (min-width: map-get($breakpoints, "desktop")) {
+    @content;
+  }
 }
 
-
-
 @mixin flexCenter($direction) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: $direction;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: $direction;
 }
 
 @mixin flexLeft($direction) {
-    display: flex;
-    align-items: flex-start;
-    justify-content: left;
-    flex-direction: $direction;
+  display: flex;
+  align-items: flex-start;
+  justify-content: left;
+  flex-direction: $direction;
 }
 
 @mixin gradientButton {
-    background: linear-gradient($colour-secondary, $colour-primary);
+  background: linear-gradient($colour-secondary, $colour-primary);
 }
 
 @mixin gradientColor {
-    color: linear-gradient($colour-secondary, $colour-primary);
+  color: linear-gradient($colour-secondary, $colour-primary);
 }
 
+@mixin gradientBackground {
+  background-image: linear-gradient($colour-primary, $colour-secondary);
+}
 
 @mixin fontType {
-    font-family: "Roboto Regular", sans-serif;
-    letter-spacing: $spacedLetters;
-    font-size: large;
+  font-family: "Roboto Regular", sans-serif;
+  letter-spacing: $spacedLetters;
+  font-size: large;
 }
 
 @mixin subheadingStyle {
-    font-size: x-large;
-    font-weight: 600;
-    padding: $somePadding;
+  font-size: x-large;
+  font-weight: 600;
+  padding: $somePadding;
 }
 
-
 @mixin fontRoboto {
-    font-family: 'Roboto', sans-serif;
-
+  font-family: "Roboto", sans-serif;
 }
 
 @mixin fontShrikhand {
-    font-family: 'Shrikhand', cursive;
+  font-family: "Shrikhand", cursive;
 }

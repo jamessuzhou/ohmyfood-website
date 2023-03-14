@@ -1,276 +1,250 @@
 @mixin transitionsPointSix {
-    transition: all .6s ease-in-out;
-
+  transition: all 0.6s ease-in-out;
 }
 
 .explainer {
-    @include flexCenter(row);
-    width: map-get($widths, "80Percent");
-    box-shadow: $shadow-box;
-    justify-content: flex-start;
-    padding-left: 40px;
-    position: relative;
-    border-radius: 20px;
-    background-color: $colour-background;
-    height: 70px;
-    margin: 10px;
-    font-weight: 600;
+  @include flexCenter(row);
+  width: map-get($widths, "80Percent");
+  box-shadow: $shadow-box;
+  justify-content: flex-start;
+  padding-left: 40px;
+  position: relative;
+  border-radius: 20px;
+  background-color: $colour-background;
+  height: 70px;
+  margin: 10px;
+  font-weight: 600;
 
-    &--number {
-        @include flexCenter(row);
-        position: absolute;
-        left: -8px;
-        height: 30px;
-        width: 30px;
-        border-radius: 100px;
-        background-color: $colour-primary;
-        color: $colour-white;
-    }
+  &--number {
+    @include flexCenter(row);
+    position: absolute;
+    left: -8px;
+    height: 30px;
+    width: 30px;
+    border-radius: 100px;
+    background-color: $colour-primary;
+    color: $colour-white;
+  }
+
+  &--icon {
+    color: gray;
+  }
+
+  &--text {
+    padding-left: 30px;
+  }
+
+  &--2 {
+    @extend .explainer;
+    background-color: $colour-primary-opaque;
 
     &--icon {
-        color: gray;
+      color: $colour-primary;
     }
-
-    &--text {
-        padding-left: 30px;
-    }
-
-    &--2 {
-        @extend .explainer;
-        background-color: $colour-primary-opaque;
-
-        &--icon {
-            color: $colour-primary;
-        }
-    }
+  }
 }
 
-
-
 .card {
-    box-shadow: $shadow-box;
+  box-shadow: $shadow-box;
+
+  &:hover {
+    box-shadow: $shadow-box-dark;
+  }
+
+  width: map-get($widths, "90Percent");
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 0 0 20px 0;
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  &__top {
+    position: relative;
+
+    &__img {
+      height: 250px;
+      border-radius: 15px 15px 0 0;
+    }
+
+    &__new-tag {
+      position: absolute;
+      @include flexCenter(row);
+      background-color: $new-tag-background-color;
+      color: $new-tag-text-color;
+      font-weight: 600;
+      top: 20px;
+      right: 20px;
+      height: 40px;
+      width: 110px;
+      border-radius: 4px;
+    }
+  }
+
+  &__bottom {
+    @include flexCenter(row);
+    justify-content: space-between;
+  }
+
+  &__text {
+    padding-left: $somePadding;
 
     &:hover {
-        box-shadow: $shadow-box-dark;
+      color: $colour-primary;
+    }
+  }
 
-        .card__bottom {
-            color: $colour-primary;
-        }
+  &__heart {
+    position: relative;
+    width: 30%;
+    top: -10px;
+
+    &--empty {
+      position: absolute;
+      top: -10px;
+      right: 20px;
     }
 
-
-    width: map-get($widths, "90Percent");
-    background-color: white;
-    border-radius: 20px;
-    overflow: hidden;
-    margin: 0 0 20px 0;
-
-
-    a {
-        text-decoration: none;
-        color: black;
+    &--full {
+      @include transitionsPointSix;
+      @include gradientBackground;
+      color: transparent;
+      background-clip: text;
+      opacity: 0;
+      position: absolute;
+      top: -10px;
+      right: 20px;
     }
 
-
-
-
-    &__top {
-        position: relative;
-
-        &__img {
-            height: 250px;
-            border-radius: 15px 15px 0 0;
-        }
-
-        &__new-tag {
-            position: absolute;
-            @include flexCenter(row);
-            background-color: $new-tag-background-color;
-            color: $new-tag-text-color;
-            font-weight: 600;
-            top: 20px;
-            right: 20px;
-            height: 40px;
-            width: 110px;
-            border-radius: 4px;
-        }
+    &:hover &--full {
+      opacity: 1;
     }
-
-
-    &__bottom {
-        @include flexCenter(row);
-        justify-content: space-between;
-    }
-
-    &__text {
-        padding-left: $somePadding;
-    }
-
-    &__heart {
-        position: relative;
-        width: 30%;
-        top: -10px;
-
-        &--empty {
-            position: absolute;
-            top: -10px;
-            right: 20px;
-        }
-
-        &--full {
-            @include transitionsPointSix;
-            color: $colour-primary;
-            opacity: 0;
-            position: absolute;
-            top: -10px;
-            right: 20px;
-
-        }
-
-        &:hover &--full {
-            opacity: 1;
-        }
-    }
-
-
+  }
 }
 
 .restaurant-heading {
-    width: map-get($widths, "90Percent");
-    justify-content: space-between;
+  width: map-get($widths, "90Percent");
+  justify-content: space-between;
+  position: relative;
+  display: flex;
+  margin-top: $somePadding;
+
+  &__title {
+    @include flexLeft(row);
+    @include fontShrikhand;
+    font-size: 30px;
+  }
+
+  & .card__heart {
     position: relative;
-    display: flex;
-    margin-top: $somePadding;
 
-    &__title {
-        @include flexLeft(row);
-        @include fontShrikhand;
-        font-size: 30px;
-
+    &--empty {
+      top: 10px;
     }
 
-    & .card__heart {
-        position: relative;
-
-        &--empty {
-            top: 10px;
-        }
-
-        &--full {
-            top: 10px;
-        }
-
+    &--full {
+      top: 10px;
     }
+  }
 }
 
 .menu {
-    @include flexCenter(column);
-    font-family: "Roboto Regular", sans-serif;
-    width: 100%;
-    height: auto;
+  @include flexCenter(column);
+  font-family: "Roboto Regular", sans-serif;
+  width: 100%;
+  height: auto;
 
-    &__subheading {
-        justify-items: flex-start;
-        text-transform: uppercase;
-        margin-bottom: 15px;
-        width: 90%;
+  &__subheading {
+    justify-items: flex-start;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    width: 90%;
 
-        &__border {
-            border-bottom: 3px solid $colour-tertiary;
-            width: 7%;
-            margin-top: -10px;
+    &__border {
+      border-bottom: 3px solid $colour-tertiary;
+      width: 7%;
+      margin-top: -10px;
+    }
+  }
+
+  &__item {
+    @include flexLeft(row);
+    height: 90px;
+    background-color: $colour-white;
+    border-radius: 25px;
+    box-shadow: $shadow-box;
+    overflow: hidden;
+    margin-bottom: 20px;
+    width: 90%;
+
+    &__text {
+      padding: 0 0 0 20px;
+      width: 80%;
+      transition: ease-in-out $mediumTime;
+
+      &__name {
+        font-size: large;
+        font-weight: bold;
+
+        p {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
+      }
+
+      &__description {
+        position: relative;
+        font-size: medium;
+
+        p {
+          margin-bottom: 5px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
     }
 
-    &__item {
-
-        @include flexLeft(row);
-        height: 90px;
-        background-color: $colour-white;
-        border-radius: 25px;
-        box-shadow: $shadow-box;
-        overflow: hidden;
-        margin-bottom: 20px;
-        width: 90%;
-
-
-        &__text {
-            padding: 0 0 0 20px;
-            width: 80%;
-            transition: ease-in-out $mediumTime;
-
-            &__name {
-                font-size: large;
-                font-weight: bold;
-
-                p {
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                }
-            }
-
-            &__description {
-                position: relative;
-                font-size: medium;
-
-                p {
-                    margin-bottom: 5px;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                }
-            }
-        }
-
-        &:hover &__text {
-            width: 80%;
-        }
-
-        &__price {
-            @include flexCenter(row);
-            height: 100%;
-            width: 15%;
-            margin-top: 18px;
-            font-size: medium;
-            font-weight: bold;
-        }
-
-
-
-        &__checkmark {
-            @include flexCenter(row);
-            color: $colour-white;
-            font-size: x-large;
-            background-color: $colour-tertiary;
-            width: 0%;
-            height: 100%;
-            transform: translateX(100px);
-            transition: ease-in-out $mediumTime;
-
-            i {
-                transform: rotate(-180deg);
-                transition: ease-in $mediumTime $shortTime;
-
-            }
-
-
-        }
-
-        &:hover &__checkmark {
-            transform: translateX(0);
-            width: 15%;
-
-        }
-
-        &:hover i {
-            transform: rotate(0deg);
-
-        }
-
+    &:hover &__text {
+      width: 80%;
     }
 
+    &__price {
+      @include flexCenter(row);
+      height: 100%;
+      width: 15%;
+      margin-top: 18px;
+      font-size: medium;
+      font-weight: bold;
+    }
 
+    &__checkmark {
+      @include flexCenter(row);
+      color: $colour-white;
+      font-size: x-large;
+      background-color: $colour-tertiary;
+      width: 0%;
+      height: 100%;
+      transform: translateX(100px);
+      transition: ease-in-out $mediumTime;
 
+      i {
+        transform: rotate(-180deg);
+        transition: ease-in $mediumTime $shortTime;
+      }
+    }
 
+    &:hover &__checkmark {
+      transform: translateX(0);
+      width: 15%;
+    }
+
+    &:hover i {
+      transform: rotate(0deg);
+    }
+  }
 }

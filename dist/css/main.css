@@ -666,9 +666,6 @@ img {
 .card:hover {
   box-shadow: 5px 5px 15px gray;
 }
-.card:hover .card__bottom {
-  color: #9356DC;
-}
 .card a {
   text-decoration: none;
   color: black;
@@ -705,6 +702,9 @@ img {
 .card__text {
   padding-left: 20px;
 }
+.card__text:hover {
+  color: #9356DC;
+}
 .card__heart {
   position: relative;
   width: 30%;
@@ -717,7 +717,10 @@ img {
 }
 .card__heart--full {
   transition: all 0.6s ease-in-out;
-  color: #9356DC;
+  background-image: linear-gradient(#9356DC, #FF79DA);
+  color: transparent;
+  -webkit-background-clip: text;
+          background-clip: text;
   opacity: 0;
   position: absolute;
   top: -10px;
