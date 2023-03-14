@@ -2,6 +2,7 @@
     @include flexCenter(column);
     @include fontType;
     width: map-get($widths, "100Percent");
+    position: relative;
 
     &--booking {
         @extend .container;
@@ -10,6 +11,7 @@
 
         & .subheading {
             justify-content: center;
+
 
         }
 
@@ -24,6 +26,8 @@
         @extend .container;
 
         &__cards {
+            @include flexCenter(column);
+
             width: 100%;
             padding: $somePadding 0;
         }
@@ -76,19 +80,32 @@
 
     &--order {
         @extend .container;
-        background-color: $colour-background;
+        background-color: rgba(246, 246, 246, .15);
         padding-bottom: 80px;
+
+
     }
 
     &--imageAndMenu {
         @extend .container;
 
+        &--restaurant-img {
+            height: 300px;
+            width: 100%;
+        }
+
         &--menuAndHeading {
-            @extend .container--imageAndMenu;
+            @extend .container;
             background-color: $colour-background;
             border-radius: 40px 40px 0 0;
             margin-top: -40px;
             margin-bottom: 0;
         }
     }
+}
+
+.subheading {
+    @include subheadingStyle;
+    @include flexLeft(row);
+    width: map-get($widths, "90Percent");
 }

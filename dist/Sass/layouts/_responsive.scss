@@ -1,34 +1,3 @@
-@include mobile {
-    .container--restaurants__cards {
-        @include flexCenter(column);
-    }
-
-    .container--imageAndMenu--restaurant-img {
-        height: 300px;
-        width: 100%;
-
-    }
-
-    .subheading {
-        @include subheadingStyle;
-        @include flexLeft(row);
-        width: map-get($widths, "90Percent");
-    }
-
-    .menu {
-        &__subheading {
-            width: map-get($widths, "90Percent");
-        }
-
-        &__item {
-            width: map-get($widths, "90Percent");
-        }
-
-    }
-
-}
-
-
 @include tablet {
     .container--howItWorks--cards {
         @include flexCenter(row);
@@ -41,6 +10,9 @@
     }
 
     .container--imageAndMenu {
+        background-size: 0;
+
+
         &--menuAndHeading {
             margin-top: -40px;
             margin-bottom: 30px;
@@ -124,25 +96,46 @@
     }
 
     .container--imageAndMenu {
+        @include flexCenter(row);
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        padding: 50px 0;
         position: relative;
 
-        &--menuAndHeading {
-            position: absolute;
-            width: 50%;
-            border-radius: 40px;
-            margin-right: -40vw;
-            margin-top: auto;
-        }
-
         &--restaurant-img {
-            height: 180vh;
+            width: 50%;
+            height: 100%;
+
+            & ::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(246, 246, 246, 0.35);
+            }
 
             & img {
-                opacity: 0.7;
+                visibility: hidden
             }
         }
 
+        &--menuAndHeading {
+            @include flexCenter(column);
+            width: 45%;
+            border-radius: 40px;
+            overflow: hidden;
+            margin-top: auto;
+            margin-right: 30px;
+            position: relative;
+        }
+
+
+
     }
+
 
     .container--order {
         border-radius: 40px;

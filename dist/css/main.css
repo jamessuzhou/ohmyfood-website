@@ -731,8 +731,8 @@ img {
   width: 90%;
   justify-content: space-between;
   position: relative;
-  margin-top: 20px;
   display: flex;
+  margin-top: 20px;
 }
 .restaurant-heading__title {
   display: flex;
@@ -765,6 +765,7 @@ img {
   justify-items: flex-start;
   text-transform: uppercase;
   margin-bottom: 15px;
+  width: 90%;
 }
 .menu__subheading__border {
   border-bottom: 3px solid #99E2D0;
@@ -782,6 +783,7 @@ img {
   box-shadow: 5px 5px 15px lightgrey;
   overflow: hidden;
   margin-bottom: 20px;
+  width: 90%;
 }
 .menu__item__text {
   padding: 0 0 0 20px;
@@ -872,7 +874,7 @@ header .back-arrow a :hover {
   color: #9356DC;
 }
 
-.container, .container--imageAndMenu, .container--imageAndMenu--menuAndHeading, .container--order, .container--pictureAndMenu, .container--howItWorks--cards, .container--howItWorks, .container--restaurants, .container--booking {
+.container, .container--imageAndMenu--menuAndHeading, .container--imageAndMenu, .container--order, .container--pictureAndMenu, .container--howItWorks--cards, .container--howItWorks, .container--restaurants, .container--booking {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -881,6 +883,7 @@ header .back-arrow a :hover {
   letter-spacing: 0.3px;
   font-size: large;
   width: 100%;
+  position: relative;
 }
 .container--booking {
   background-color: #F6F6F6;
@@ -895,6 +898,10 @@ header .back-arrow a :hover {
   font-weight: 100;
 }
 .container--restaurants__cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   width: 100%;
   padding: 20px 0;
 }
@@ -938,14 +945,29 @@ header .back-arrow a :hover {
   padding: 30px 0;
 }
 .container--order {
-  background-color: #F6F6F6;
+  background-color: rgba(246, 246, 246, 0.15);
   padding-bottom: 80px;
+}
+.container--imageAndMenu--restaurant-img {
+  height: 300px;
+  width: 100%;
 }
 .container--imageAndMenu--menuAndHeading {
   background-color: #F6F6F6;
   border-radius: 40px 40px 0 0;
   margin-top: -40px;
   margin-bottom: 0;
+}
+
+.subheading {
+  font-size: x-large;
+  font-weight: 600;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: left;
+  flex-direction: row;
+  width: 90%;
 }
 
 footer {
@@ -980,34 +1002,6 @@ footer {
   color: #fff;
 }
 
-@media all and (min-width: 0px) {
-  .container--restaurants__cards {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  .container--imageAndMenu--restaurant-img {
-    height: 300px;
-    width: 100%;
-  }
-  .subheading {
-    font-size: x-large;
-    font-weight: 600;
-    padding: 20px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: left;
-    flex-direction: row;
-    width: 90%;
-  }
-  .menu__subheading {
-    width: 90%;
-  }
-  .menu__item {
-    width: 90%;
-  }
-}
 @media all and (min-width: 768px) and (max-width: 992px) {
   .container--howItWorks--cards {
     display: flex;
@@ -1019,6 +1013,9 @@ footer {
   }
   .container--howItWorks--cards .explainer, .container--howItWorks--cards .explainer--2 {
     margin: 0 20px;
+  }
+  .container--imageAndMenu {
+    background-size: 0;
   }
   .container--imageAndMenu--menuAndHeading {
     margin-top: -40px;
@@ -1084,21 +1081,44 @@ footer {
   .container--howItWorks--cards .explainer, .container--howItWorks--cards .explainer--2 {
     margin: 0 20px;
   }
-  .container--imageAndMenu, .container--imageAndMenu--menuAndHeading {
+  .container--imageAndMenu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 50px 0;
     position: relative;
   }
-  .container--imageAndMenu--menuAndHeading {
-    position: absolute;
-    width: 50%;
-    border-radius: 40px;
-    margin-right: -40vw;
-    margin-top: auto;
-  }
   .container--imageAndMenu--restaurant-img {
-    height: 180vh;
+    width: 50%;
+    height: 100%;
+  }
+  .container--imageAndMenu--restaurant-img ::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(246, 246, 246, 0.35);
   }
   .container--imageAndMenu--restaurant-img img {
-    opacity: 0.7;
+    visibility: hidden;
+  }
+  .container--imageAndMenu--menuAndHeading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 45%;
+    border-radius: 40px;
+    overflow: hidden;
+    margin-top: auto;
+    margin-right: 30px;
+    position: relative;
   }
   .container--order {
     border-radius: 40px;

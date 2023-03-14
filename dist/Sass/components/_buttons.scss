@@ -10,7 +10,6 @@
     cursor: pointer;
     transition: filter $mediumTime $shortTime, box-shadow $mediumTime;
 
-
     &:hover {
         box-shadow: $shadow-box-dark;
         filter: brightness(110%);

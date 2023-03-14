@@ -60,8 +60,6 @@
 
 
     width: map-get($widths, "90Percent");
-
-
     background-color: white;
     border-radius: 20px;
     overflow: hidden;
@@ -141,8 +139,8 @@
     width: map-get($widths, "90Percent");
     justify-content: space-between;
     position: relative;
-    margin-top: $somePadding;
     display: flex;
+    margin-top: $somePadding;
 
     &__title {
         @include flexLeft(row);
@@ -175,6 +173,7 @@
         justify-items: flex-start;
         text-transform: uppercase;
         margin-bottom: 15px;
+        width: 90%;
 
         &__border {
             border-bottom: 3px solid $colour-tertiary;
@@ -192,6 +191,7 @@
         box-shadow: $shadow-box;
         overflow: hidden;
         margin-bottom: 20px;
+        width: 90%;
 
 
         &__text {
