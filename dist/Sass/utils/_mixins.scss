@@ -5,12 +5,6 @@
   text-shadow: $offset $offset $colour;
 }
 
-@mixin mobile {
-  @media all and (min-width: map-get($breakpoints, "mobile")) {
-    @content;
-  }
-}
-
 @mixin tablet {
   @media all and (min-width: map-get($breakpoints, "tablet")) and (max-width: map-get($breakpoints, "desktop")) {
     @content;
